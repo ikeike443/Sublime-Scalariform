@@ -10,6 +10,9 @@ class ScalariformCommand(sublime_plugin.TextCommand):
     import os
     os.system(self.CMD + self.view.file_name())
     print self.CMD+self.view.file_name()
+    self._force_refresh()
+
+  def _force_refresh(self):
     (self_group, self_view_idx) = sublime.active_window().get_view_index(self.view)
  
     self_g_views = sublime.active_window().views_in_group(self_group)
