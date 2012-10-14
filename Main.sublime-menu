@@ -1,4 +1,17 @@
 [
+   { 
+        "id": "tools",
+        "children":
+        [
+            {
+                "caption": "Scalariform",
+                "children":
+                [
+                    {"id": "Scalariform", "caption": "format", "command": "scalariform" }
+                ]
+            }
+        ]
+    },
     {
         "caption": "Preferences",
         "mnemonic": "n",
