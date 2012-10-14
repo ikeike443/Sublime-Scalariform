@@ -1,9 +1,15 @@
 import sublime, sublime_plugin
 
 class ScalariformCommand(sublime_plugin.TextCommand):
+  SETTINGS = sublime.load_settings("Scalariform.sublime-settings")
+  FORMATTING = SETTINGS.get("formatting")
+  CMD      = "java -jar scalariform.jar " 
+
   def run(self, edit):
+    self._setup_cmd()
     import os
-    os.system("java -jar scalariform.jar " + self.view.file_name())
+    os.system(self.CMD + self.view.file_name())
+    print self.CMD+self.view.file_name()
     (self_group, self_view_idx) = sublime.active_window().get_view_index(self.view)
  
     self_g_views = sublime.active_window().views_in_group(self_group)
@@ -24,3 +30,12 @@ class ScalariformCommand(sublime_plugin.TextCommand):
       sublime.active_window().focus_view(sublime.active_window().views()[self_view_idx-1])
     
     sublime.active_window().focus_view(self.view)
+
+  def _setup_cmd(self):
+    for k, v in self.FORMATTING.items():
+      if not k in ["encoding", "alignSingleLineCaseStatements.maxArrowIndent", "indentSpaces"]:
+        self.CMD += ("+" if v else "-") + k + " "
+      elif k == "encoding":
+        self.CMD += "--" + k + "=" + v + " "
+      else:
+        self.CMD += "-" + k + "=" + str(v) + " "

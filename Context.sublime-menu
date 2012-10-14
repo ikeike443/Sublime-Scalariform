@@ -1,0 +1,10 @@
+[
+  { "caption": "-" },
+  {
+    "caption": "Scalariform",
+    "children":
+      [
+        {"id": "Scalariform", "caption": "format", "command": "scalariform" }
+      ]
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "formatting" :
+    {
+      "encoding" :                                              "UTF-8",  //Set the encoding, e.g. UTF-8. If not set, defaults to the platform default encoding (currently UTF-8).
+      "alignParameters" :                                         false,  //Enable/disable Align parameters on different lines in the same column
+      "alignSingleLineCaseStatements" :                           false,  //Enable/disable Align the arrows of consecutive single-line case statements
+      "alignSingleLineCaseStatements.maxArrowIndent" :               40,  //Set Maximum number of spaces inserted before an arrow to align case statements: [1-100]
+      "compactControlReadability" :                               false,  //Enable/disable" :   false,  //Enable Compact Control Readability style
+      "compactStringConcatenation" :                              false,  //Enable/disable Omit spaces when formatting a '+' operator on String literals
+      "doubleIndentClassDeclaration" :                            false,  //Enable/disable Double indent" :   false,  //Either a class's parameters or its inheritance list
+      "formatXml" :                                                true,  //Enable/disable Format XML literals
+      "indentLocalDefs" :                                         false,  //Enable/disable Indent local defs an" :   false,  //Extra level
+      "indentPackageBlocks" :                                      true,  //Enable/disable Indent package blocks
+      "indentSpaces" :                                                2,  //Set Number of spaces to use for indentation: [1-10]
+      "indentWithTabs" :                                          false,  //Enable/disable Use a tab character for indentation
+      "multilineScaladocCommentsStartOnFirstLine" :               false,  //Enable/disable Start multiline Scaladoc comment body on same line as the opening '/**' 
+      "preserveDanglingCloseParenthesis" :                        false,  //Enable/disable Allow a newline before a ')' in an argument" :   false,  //Expression
+      "placeScaladocAsterisksBeneathSecondAsterisk" :             false,  //Enable/disable Place Scaladoc asterisks beneath the second asterisk in the opening '/**', as opposed to the first
+      "preserveSpaceBeforeArguments" :                            false,  //Enable/disable Preserve a space before a parenthesis argument
+      "rewriteArrowSymbols" :                                     false,  //Enable/disable Replace arrow tokens with unicode" :   false,  //Equivalents: => with ⇒, and <- with ←
+      "spaceBeforeColon" :                                        false,  //Enable/disable Add a space before colons
+      "spaceInsideBrackets" :                                     false,  //Enable/disable Require a space after '[' and before ']'
+      "spaceInsideParentheses" :                                  false,  //Enable/disable Require a space after '(' and before ')'
+      "spacesWithinPatternBinders" :                               true   //Enable/disable Add a space around the @ token in pattern binders
+    }
+}
