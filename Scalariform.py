@@ -1,15 +1,27 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import sublime, sublime_plugin
 
 class ScalariformCommand(sublime_plugin.TextCommand):
   SETTINGS = sublime.load_settings("Scalariform.sublime-settings")
   FORMATTING = SETTINGS.get("formatting")
-  CMD      = "java -jar scalariform.jar " 
+  CMD = "java -jar " + sublime.packages_path().replace(" ", "\\ ") + \
+        "/sublime-Scalariform/" + "scalariform.jar "
 
   def run(self, edit):
     self._setup_cmd()
-    import os
-    os.system(self.CMD + self.view.file_name())
-    print self.CMD+self.view.file_name()
+    import os, subprocess, sys
+    try:
+      print "Executing command is : " + self.CMD + self.view.file_name()
+      retcode = subprocess.call(self.CMD+self.view.file_name(), shell=True)
+      if retcode < 0:
+        print >>sys.stderr, "Aborted : ", -retcode
+      else:
+        print >>sys.stderr, "Return code : ", retcode
+    except OSError, e:
+      print >>sys.stderr, "OSError cptured : ", e
+
     self._force_refresh()
 
   def _force_refresh(self):
