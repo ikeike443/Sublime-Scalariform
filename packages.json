@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.2",
+  "packages": [
+    {
+      "name": "Sublime-Scalariform",
+      "description": "The wrapper of Scalariform - scala source code formatter",
+      "author": "ikeike443",
+      "homepage": "https://github.com/ikeike443/Sublime-Scalariform",
+      "last_modified": "2012-10-16 00:00:00",
+      "platforms": {
+        "*": [
+          {
+            "version": "0.1",
+            "url": "https://nodeload.github.com/ikeike443/Sublime-Scalariform/zipball/master"
+          }
+        ]
+      }
+    }
+  ]
+}
