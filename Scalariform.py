@@ -7,7 +7,7 @@ class ScalariformCommand(sublime_plugin.TextCommand):
   SETTINGS = sublime.load_settings("Scalariform.sublime-settings")
   FORMATTING = SETTINGS.get("formatting")
   CMD = "java -jar " + sublime.packages_path().replace(" ", "\\ ") + \
-        "/sublime-Scalariform/" + "scalariform.jar "
+        "/Scalariform/" + "scalariform.jar "
 
   def run(self, edit):
     self._setup_cmd()
