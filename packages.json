@@ -10,8 +10,8 @@
       "platforms": {
         "*": [
           {
-            "version": "0.2",
-            "url": "https://nodeload.github.com/ikeike443/Sublime-Scalariform/zipball/0.2"
+            "version": "0.3",
+            "url": "https://nodeload.github.com/ikeike443/Sublime-Scalariform/zipball/0.3"
           }
         ]
       }

@@ -7,13 +7,16 @@ class ScalariformCommand(sublime_plugin.TextCommand):
   SETTINGS = sublime.load_settings("Scalariform.sublime-settings")
   FORMATTING = SETTINGS.get("formatting")
   CMD = "java -jar \"" + sublime.packages_path().replace("\\", "/") + \
-          "/Scalariform/" + "scalariform.jar \" "
+        "/Scalariform/" + "scalariform.jar \" " if sublime.platform() == "windows" \
+        else  "java -jar " + sublime.packages_path().replace(" ", "\\ ") + \
+          "/Scalariform/" + "scalariform.jar " 
+
 
   def run(self, edit):
     self._setup_cmd()
     import os, subprocess, sys
     try:
-      print "Executing command is : " + self.CMD + self.view.file_name()
+      print "*** Executing command is : " + self.CMD + self.view.file_name()
       retcode = subprocess.call(self.CMD+self.view.file_name(), shell=True)
       if retcode < 0:
         print >>sys.stderr, "Aborted : ", -retcode
